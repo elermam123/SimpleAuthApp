@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		255D7062DF652250215E194D /* libPods-SimpleAuthenticationAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A24D4731C75E6BB26EEDF1 /* libPods-SimpleAuthenticationAppTests.a */; };
+		7B77E75141BF8C57EEBB0D2B /* libPods-SimpleAuthenticationApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB92118919382C35BE1B1583 /* libPods-SimpleAuthenticationApp.a */; };
 		7E940C631E5F0C770002FC0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C621E5F0C770002FC0A /* main.m */; };
 		7E940C661E5F0C770002FC0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C651E5F0C770002FC0A /* AppDelegate.m */; };
-		7E940C691E5F0C770002FC0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C681E5F0C770002FC0A /* ViewController.m */; };
+		7E940C691E5F0C770002FC0A /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C681E5F0C770002FC0A /* AuthViewController.m */; };
 		7E940C6C1E5F0C770002FC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E940C6A1E5F0C770002FC0A /* Main.storyboard */; };
 		7E940C6E1E5F0C770002FC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E940C6D1E5F0C770002FC0A /* Assets.xcassets */; };
 		7E940C711E5F0C770002FC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E940C6F1E5F0C770002FC0A /* LaunchScreen.storyboard */; };
 		7E940C7C1E5F0C770002FC0A /* SimpleAuthenticationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C7B1E5F0C770002FC0A /* SimpleAuthenticationAppTests.m */; };
+		7E940C8A1E6044500002FC0A /* AuthServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C891E6044500002FC0A /* AuthServerManager.m */; };
+		7E940C8F1E6044B90002FC0A /* AuthPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C8E1E6044B90002FC0A /* AuthPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +35,8 @@
 		7E940C621E5F0C770002FC0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E940C641E5F0C770002FC0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E940C651E5F0C770002FC0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7E940C671E5F0C770002FC0A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7E940C681E5F0C770002FC0A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7E940C671E5F0C770002FC0A /* AuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		7E940C681E5F0C770002FC0A /* AuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		7E940C6B1E5F0C770002FC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E940C6D1E5F0C770002FC0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E940C701E5F0C770002FC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,17 @@
 		7E940C771E5F0C770002FC0A /* SimpleAuthenticationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAuthenticationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E940C7B1E5F0C770002FC0A /* SimpleAuthenticationAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleAuthenticationAppTests.m; sourceTree = "<group>"; };
 		7E940C7D1E5F0C770002FC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E940C871E6043D70002FC0A /* AuthAppProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AuthAppProtocol.h; path = ../AuthAppProtocol.h; sourceTree = "<group>"; };
+		7E940C881E6044500002FC0A /* AuthServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthServerManager.h; sourceTree = "<group>"; };
+		7E940C891E6044500002FC0A /* AuthServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthServerManager.m; sourceTree = "<group>"; };
+		7E940C8D1E6044B90002FC0A /* AuthPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthPresenter.h; sourceTree = "<group>"; };
+		7E940C8E1E6044B90002FC0A /* AuthPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthPresenter.m; sourceTree = "<group>"; };
+		AB92118919382C35BE1B1583 /* libPods-SimpleAuthenticationApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleAuthenticationApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1904FB995BA121A37C27590 /* Pods-SimpleAuthenticationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAuthenticationApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAuthenticationApp/Pods-SimpleAuthenticationApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C145968B1E9EF98305407D0E /* Pods-SimpleAuthenticationAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAuthenticationAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAuthenticationAppTests/Pods-SimpleAuthenticationAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5A24D4731C75E6BB26EEDF1 /* libPods-SimpleAuthenticationAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleAuthenticationAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D911712B267587EC2C157F46 /* Pods-SimpleAuthenticationAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAuthenticationAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAuthenticationAppTests/Pods-SimpleAuthenticationAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F63C0E5324D233BD66DFF44F /* Pods-SimpleAuthenticationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAuthenticationApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAuthenticationApp/Pods-SimpleAuthenticationApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B77E75141BF8C57EEBB0D2B /* libPods-SimpleAuthenticationApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +70,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255D7062DF652250215E194D /* libPods-SimpleAuthenticationAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45B5BE057BC7A0C076EE0F9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1904FB995BA121A37C27590 /* Pods-SimpleAuthenticationApp.debug.xcconfig */,
+				F63C0E5324D233BD66DFF44F /* Pods-SimpleAuthenticationApp.release.xcconfig */,
+				C145968B1E9EF98305407D0E /* Pods-SimpleAuthenticationAppTests.debug.xcconfig */,
+				D911712B267587EC2C157F46 /* Pods-SimpleAuthenticationAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E940C551E5F0C770002FC0A = {
 			isa = PBXGroup;
 			children = (
 				7E940C601E5F0C770002FC0A /* SimpleAuthenticationApp */,
 				7E940C7A1E5F0C770002FC0A /* SimpleAuthenticationAppTests */,
 				7E940C5F1E5F0C770002FC0A /* Products */,
+				45B5BE057BC7A0C076EE0F9F /* Pods */,
+				AA257A2484A142EAA1D3B952 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +111,12 @@
 		7E940C601E5F0C770002FC0A /* SimpleAuthenticationApp */ = {
 			isa = PBXGroup;
 			children = (
+				7E940C8C1E60447B0002FC0A /* View */,
+				7E940C8B1E6044690002FC0A /* Presenter */,
+				7E940C861E5F15B60002FC0A /* Model */,
+				7E940C871E6043D70002FC0A /* AuthAppProtocol.h */,
 				7E940C641E5F0C770002FC0A /* AppDelegate.h */,
 				7E940C651E5F0C770002FC0A /* AppDelegate.m */,
-				7E940C671E5F0C770002FC0A /* ViewController.h */,
-				7E940C681E5F0C770002FC0A /* ViewController.m */,
 				7E940C6A1E5F0C770002FC0A /* Main.storyboard */,
 				7E940C6D1E5F0C770002FC0A /* Assets.xcassets */,
 				7E940C6F1E5F0C770002FC0A /* LaunchScreen.storyboard */,
@@ -111,6 +143,42 @@
 			path = SimpleAuthenticationAppTests;
 			sourceTree = "<group>";
 		};
+		7E940C861E5F15B60002FC0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E940C881E6044500002FC0A /* AuthServerManager.h */,
+				7E940C891E6044500002FC0A /* AuthServerManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7E940C8B1E6044690002FC0A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7E940C8D1E6044B90002FC0A /* AuthPresenter.h */,
+				7E940C8E1E6044B90002FC0A /* AuthPresenter.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		7E940C8C1E60447B0002FC0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E940C671E5F0C770002FC0A /* AuthViewController.h */,
+				7E940C681E5F0C770002FC0A /* AuthViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AA257A2484A142EAA1D3B952 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB92118919382C35BE1B1583 /* libPods-SimpleAuthenticationApp.a */,
+				C5A24D4731C75E6BB26EEDF1 /* libPods-SimpleAuthenticationAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E940C801E5F0C770002FC0A /* Build configuration list for PBXNativeTarget "SimpleAuthenticationApp" */;
 			buildPhases = (
+				25CF6239DA3321DBC88A02CD /* [CP] Check Pods Manifest.lock */,
 				7E940C5A1E5F0C770002FC0A /* Sources */,
 				7E940C5B1E5F0C770002FC0A /* Frameworks */,
 				7E940C5C1E5F0C770002FC0A /* Resources */,
+				111D5B76B88AFB33B0CDBE6C /* [CP] Embed Pods Frameworks */,
+				597BF42AE13C499F78DBBDE2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E940C831E5F0C770002FC0A /* Build configuration list for PBXNativeTarget "SimpleAuthenticationAppTests" */;
 			buildPhases = (
+				A5CDCD6896E3328AC500CD9D /* [CP] Check Pods Manifest.lock */,
 				7E940C731E5F0C770002FC0A /* Sources */,
 				7E940C741E5F0C770002FC0A /* Frameworks */,
 				7E940C751E5F0C770002FC0A /* Resources */,
+				AA1436CE100FB5545256EEA7 /* [CP] Embed Pods Frameworks */,
+				605BDA24766380C0E152FF09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,13 +284,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		111D5B76B88AFB33B0CDBE6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleAuthenticationApp/Pods-SimpleAuthenticationApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25CF6239DA3321DBC88A02CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		597BF42AE13C499F78DBBDE2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleAuthenticationApp/Pods-SimpleAuthenticationApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605BDA24766380C0E152FF09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleAuthenticationAppTests/Pods-SimpleAuthenticationAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5CDCD6896E3328AC500CD9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA1436CE100FB5545256EEA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleAuthenticationAppTests/Pods-SimpleAuthenticationAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E940C5A1E5F0C770002FC0A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E940C691E5F0C770002FC0A /* ViewController.m in Sources */,
+				7E940C8F1E6044B90002FC0A /* AuthPresenter.m in Sources */,
+				7E940C691E5F0C770002FC0A /* AuthViewController.m in Sources */,
 				7E940C661E5F0C770002FC0A /* AppDelegate.m in Sources */,
+				7E940C8A1E6044500002FC0A /* AuthServerManager.m in Sources */,
 				7E940C631E5F0C770002FC0A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +520,7 @@
 		};
 		7E940C811E5F0C770002FC0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1904FB995BA121A37C27590 /* Pods-SimpleAuthenticationApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5SX4A73874;
@@ -363,6 +533,7 @@
 		};
 		7E940C821E5F0C770002FC0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63C0E5324D233BD66DFF44F /* Pods-SimpleAuthenticationApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5SX4A73874;
@@ -375,6 +546,7 @@
 		};
 		7E940C841E5F0C770002FC0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C145968B1E9EF98305407D0E /* Pods-SimpleAuthenticationAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5SX4A73874;
@@ -388,6 +560,7 @@
 		};
 		7E940C851E5F0C770002FC0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D911712B267587EC2C157F46 /* Pods-SimpleAuthenticationAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5SX4A73874;
@@ -418,6 +591,7 @@
 				7E940C821E5F0C770002FC0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E940C831E5F0C770002FC0A /* Build configuration list for PBXNativeTarget "SimpleAuthenticationAppTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +600,7 @@
 				7E940C851E5F0C770002FC0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

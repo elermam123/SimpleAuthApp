@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthAppProtocol.h"
 
-@interface ViewController : UIViewController
+@interface AuthViewController : UIViewController<RequirementForView>
+
+-(void) setConfirmActionBasedOnServerInfo:(NSUInteger) confirmActionFlag;
 
 
 @end
