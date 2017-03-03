@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "AuthAppProtocol.h"
 
+@protocol RequirementForView;
+
+
 @interface AuthPresenter : NSObject<RequirementForPresenter>
 
--(void) getAuthInfoFromModel:(NSDictionary *)dictLoginPasssword;
--(void) setConfirmInfoToView;
+
+@property(nonatomic, strong) id<RequirementForView> authView;
 
 
 @end

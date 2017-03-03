@@ -11,11 +11,8 @@
 
 @interface AuthServerManager : NSObject<RequirementForServerManager>
 
--(id) initWithUrl:(NSURL *)url;
 
--(void) getAuthInfoFromServer:(NSDictionary*) dictLoginPassword
-                     onSuccess:(void(^)(NSDictionary* logPassFromServ)) success
-                     onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
+
 
 
 @end

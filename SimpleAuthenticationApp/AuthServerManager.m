@@ -31,11 +31,33 @@
 }
 
 
--(void) getAuthInfoFromServer:(NSDictionary*) dictLoginPassword
-                    onSuccess:(void(^)(NSDictionary* logPassFromServ)) success
-                    onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure{
+-(void) getAuthInfoFromServer:(void(^)(NSDictionary* logPassFromServ)) success
+                    onFailure:(void(^)(NSError* error)) failure{
     
+    [self.requestOperationManager
+     GET:@"auth"
+     parameters:nil
+     progress:nil
+     success:^(NSURLSessionTask *task, id responseObject) {
+         NSLog(@"JSON: %@", responseObject);
+         NSDictionary *dictFromServ = [responseObject objectForKey:@"auth"];
+         NSLog(@" respobj = %@",dictFromServ);
+         if(success){
+             success(dictFromServ);
+         }
+         
+         
+     } failure:^(NSURLSessionTask *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+         
+         if(failure){
+             failure(error);
+         }
+         
+     }];
 
+    
+    
 }
 
 

@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+typedef enum AuthenticationFlags:NSUInteger{
+    AuthInfoMatch,
+    AuthInfoNotMatch,
+    AuthInfoEmpty,
+    AuthInfoIncorrectLoginFormat,
+    AuthInfoIncorrectPasswordFormat,
+    AuthInfoIncorrectTooManyTimes
+} AuthenticationFlags;
+
+typedef enum ServerErrorFlags:NSUInteger{
+    ServerConnectionTimeOut,
+    ServerNoConnect,
+    ServerNotFound404
+} ServerErrorFlags;
+
 #pragma mark Protocol for Model
 
 @protocol RequirementForServerManager
@@ -15,31 +32,34 @@
 @required
 
 - (id) initWithUrl:(NSURL*) url;
-- (void) getAuthInfoFromServer:(NSDictionary*) dictLoginPassword
-                     onSuccess:(void(^)(NSDictionary* logPassFromServ)) success
-                     onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
+- (void) getAuthInfoFromServer:(void(^)(NSDictionary* logPassFromServ)) success
+                     onFailure:(void(^)(NSError* error)) failure;
 
 @end
 
-
-#pragma mark Protocol for Presenter
-
-@protocol RequirementForPresenter
-
-@required
--(id) initWithServerManager;
--(void) getAuthInfoFromModel:(NSDictionary*) dictLoginPasssword;
--(void) setConfirmInfoToView;
-
-
-@end
 
 
 #pragma mark Protocol for View
 @protocol RequirementForView
 
 @required
--(void) setConfirmActionBasedOnServerInfo:(NSUInteger) confirmActionFlag;
+-(void) setConfirmActionBasedOnServerInfo:(AuthenticationFlags) authFlags;
+-(void) createAlertBasedOnServerError:(ServerErrorFlags) errorFlagsFromServer errorMessage:(NSString*) message;
+
+@optional
+-(void) warningInfoText:(NSUInteger) attempts;
+
+
+@end
+
+#pragma mark Protocol for Presenter
+
+@protocol RequirementForPresenter
+
+@required
+-(id) initWithServerManagerAndView:(id <RequirementForView>) authViewControl;
+-(void) getAuthInfoFromModel:(NSDictionary*) dictLoginPasssword;
+
 
 @end
 

@@ -23,35 +23,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tCa-m7-W32">
-                                <rect key="frame" x="16" y="39" width="343" height="30"/>
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-fS-CSc">
-                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-fS-CSc">
+                                <rect key="frame" x="16" y="74" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nga-YG-j1q" userLabel="WarningLoginLabel">
+                                <rect key="frame" x="16" y="66" width="343" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="XK1-mH-7pi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-DM-Zhv" userLabel="WarninngPasswordLabel">
+                                <rect key="frame" x="16" y="112" width="343" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="MuW-8y-wg1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-lT-dVx">
-                                <rect key="frame" x="276" y="140" width="83" height="36"/>
+                                <rect key="frame" x="276" y="156" width="83" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MKs-zo-0Tn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ahU-fS-CSc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="26J-ZY-Nmk"/>
+                            <constraint firstItem="ahU-fS-CSc" firstAttribute="top" secondItem="Nga-YG-j1q" secondAttribute="bottom" constant="8" id="6eV-dM-0t6"/>
                             <constraint firstAttribute="trailing" secondItem="gtx-lT-dVx" secondAttribute="trailing" constant="16" id="6wW-ZX-rkq"/>
                             <constraint firstItem="ahU-fS-CSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cyf-ka-his"/>
+                            <constraint firstItem="1rh-DM-Zhv" firstAttribute="top" secondItem="ahU-fS-CSc" secondAttribute="bottom" constant="8" id="F1w-EM-IOC"/>
                             <constraint firstItem="tCa-m7-W32" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FZ0-ML-ire"/>
-                            <constraint firstItem="ahU-fS-CSc" firstAttribute="top" secondItem="tCa-m7-W32" secondAttribute="bottom" constant="15" id="Jhq-RE-dGQ"/>
-                            <constraint firstItem="tCa-m7-W32" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="bFJ-ro-GYw"/>
+                            <constraint firstItem="Nga-YG-j1q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Fmg-YF-eM6"/>
+                            <constraint firstItem="gtx-lT-dVx" firstAttribute="top" secondItem="1rh-DM-Zhv" secondAttribute="bottom" constant="8" id="JD1-9Q-VlL"/>
+                            <constraint firstAttribute="trailing" secondItem="1rh-DM-Zhv" secondAttribute="trailing" constant="16" id="PIn-GS-zwc"/>
+                            <constraint firstAttribute="trailing" secondItem="Nga-YG-j1q" secondAttribute="trailing" constant="16" id="QHk-Hx-ZlH"/>
+                            <constraint firstItem="tCa-m7-W32" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bFJ-ro-GYw"/>
                             <constraint firstItem="tCa-m7-W32" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ehW-oB-778"/>
-                            <constraint firstItem="gtx-lT-dVx" firstAttribute="top" secondItem="ahU-fS-CSc" secondAttribute="bottom" constant="26" id="pPa-hj-F8t"/>
+                            <constraint firstItem="1rh-DM-Zhv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="xF0-kh-jsz"/>
+                            <constraint firstItem="Nga-YG-j1q" firstAttribute="top" secondItem="tCa-m7-W32" secondAttribute="bottom" constant="8" id="xbc-x6-Cpe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginField" destination="tCa-m7-W32" id="AJV-WB-wyX"/>
+                        <outlet property="passwordField" destination="ahU-fS-CSc" id="ebo-Dd-FW1"/>
+                        <outlet property="warningLoginLabel" destination="Nga-YG-j1q" id="rqX-OF-h8Z"/>
+                        <outlet property="warningPasswordLabel" destination="1rh-DM-Zhv" id="N0f-jK-LKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
