@@ -35,6 +35,7 @@ typedef enum ServerErrorFlags:NSUInteger{
 - (void) getAuthInfoFromServer:(void(^)(NSDictionary* logPassFromServ)) success
                      onFailure:(void(^)(NSError* error)) failure;
 
+
 @end
 
 
@@ -57,9 +58,11 @@ typedef enum ServerErrorFlags:NSUInteger{
 @protocol RequirementForPresenter
 
 @required
--(id) initWithServerManagerAndView:(id <RequirementForView>) authViewControl;
+-(id) initWithView:(id <RequirementForView>) authViewControl;
 -(void) getAuthInfoFromModel:(NSDictionary*) dictLoginPasssword;
 
+@optional
+-(BOOL) setEnterDataInfoToView:(NSDictionary*) dictLoginPasssword;
 
 @end
 

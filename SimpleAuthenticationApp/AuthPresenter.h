@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthAppProtocol.h"
+#import "AuthServerManager.h"
 
 @protocol RequirementForView;
 
@@ -16,6 +17,8 @@
 
 
 @property(nonatomic, strong) id<RequirementForView> authView;
+
+@property (nonatomic) AuthServerManager *serverManager;
 
 
 @end

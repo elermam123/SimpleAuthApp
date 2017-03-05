@@ -21,8 +21,7 @@
 
 -(id) initWithUrl:(NSURL *)url{
     
-    self = [super init];
-    if(self){
+    if(self = [super init]){
         
         self.requestOperationManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
     }
@@ -34,27 +33,26 @@
 -(void) getAuthInfoFromServer:(void(^)(NSDictionary* logPassFromServ)) success
                     onFailure:(void(^)(NSError* error)) failure{
     
-    [self.requestOperationManager
-     GET:@"auth"
-     parameters:nil
-     progress:nil
-     success:^(NSURLSessionTask *task, id responseObject) {
-         NSLog(@"JSON: %@", responseObject);
-         NSDictionary *dictFromServ = [responseObject objectForKey:@"auth"];
-         NSLog(@" respobj = %@",dictFromServ);
-         if(success){
-             success(dictFromServ);
-         }
-         
-         
-     } failure:^(NSURLSessionTask *operation, NSError *error) {
-         NSLog(@"Error: %@", error);
-         
-         if(failure){
-             failure(error);
-         }
-         
-     }];
+    [self.requestOperationManager GET:@"auth"
+                           parameters:nil
+                             progress:nil
+                              success:^(NSURLSessionTask *task, id responseObject) {
+                                  NSLog(@"JSON: %@", responseObject);
+                                  NSDictionary *dictFromServ = [responseObject objectForKey:@"auth"];
+                                  NSLog(@" respobj = %@",dictFromServ);
+                                  if(success){
+                                      success(dictFromServ);
+                                  }
+                                  
+                                  
+                              } failure:^(NSURLSessionTask *operation, NSError *error) {
+                                  NSLog(@"Error: %@", error);
+                                  
+                                  if(failure){
+                                      failure(error);
+                                  }
+                                  
+                              }];
 
     
     

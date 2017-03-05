@@ -18,6 +18,7 @@
 		7E940C7C1E5F0C770002FC0A /* SimpleAuthenticationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C7B1E5F0C770002FC0A /* SimpleAuthenticationAppTests.m */; };
 		7E940C8A1E6044500002FC0A /* AuthServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C891E6044500002FC0A /* AuthServerManager.m */; };
 		7E940C8F1E6044B90002FC0A /* AuthPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E940C8E1E6044B90002FC0A /* AuthPresenter.m */; };
+		7EE5D59F1E6C36B8005B0AC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EE5D59D1E6C36B8005B0AC4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		7E940C891E6044500002FC0A /* AuthServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthServerManager.m; sourceTree = "<group>"; };
 		7E940C8D1E6044B90002FC0A /* AuthPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthPresenter.h; sourceTree = "<group>"; };
 		7E940C8E1E6044B90002FC0A /* AuthPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthPresenter.m; sourceTree = "<group>"; };
+		7EE5D59B1E6C1F71005B0AC4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		7EE5D59C1E6C1F71005B0AC4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7EE5D59E1E6C36B8005B0AC4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB92118919382C35BE1B1583 /* libPods-SimpleAuthenticationApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleAuthenticationApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1904FB995BA121A37C27590 /* Pods-SimpleAuthenticationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAuthenticationApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAuthenticationApp/Pods-SimpleAuthenticationApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C145968B1E9EF98305407D0E /* Pods-SimpleAuthenticationAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAuthenticationAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAuthenticationAppTests/Pods-SimpleAuthenticationAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				7E940C671E5F0C770002FC0A /* AuthViewController.h */,
 				7E940C681E5F0C770002FC0A /* AuthViewController.m */,
+				7EE5D59D1E6C36B8005B0AC4 /* Localizable.strings */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 7E940C551E5F0C770002FC0A;
 			productRefGroup = 7E940C5F1E5F0C770002FC0A /* Products */;
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E940C711E5F0C770002FC0A /* LaunchScreen.storyboard in Resources */,
+				7EE5D59F1E6C36B8005B0AC4 /* Localizable.strings in Resources */,
 				7E940C6E1E5F0C770002FC0A /* Assets.xcassets in Resources */,
 				7E940C6C1E5F0C770002FC0A /* Main.storyboard in Resources */,
 			);
@@ -413,6 +420,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E940C6B1E5F0C770002FC0A /* Base */,
+				7EE5D59B1E6C1F71005B0AC4 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -421,8 +429,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E940C701E5F0C770002FC0A /* Base */,
+				7EE5D59C1E6C1F71005B0AC4 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7EE5D59D1E6C36B8005B0AC4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EE5D59E1E6C36B8005B0AC4 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -432,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -481,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

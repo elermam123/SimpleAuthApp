@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "Enter your password"; ObjectID = "ahU-fS-CSc"; */
+"ahU-fS-CSc.placeholder" = "Введите пароль";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "gtx-lT-dVx"; */
+"gtx-lT-dVx.normalTitle" = "Войти";
+
+/* Class = "UITextField"; placeholder = "Enter your login"; ObjectID = "tCa-m7-W32"; */
+"tCa-m7-W32.placeholder" = "Введите логин";

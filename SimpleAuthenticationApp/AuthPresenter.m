@@ -7,34 +7,35 @@
 //
 
 #import "AuthPresenter.h"
-#import "AuthServerManager.h"
+
 
 #import "AuthViewController.h"
 
+#define failureMaxCount 5
+#define urlString "http://localhost:4567"
 
 @interface AuthPresenter()
 
-@property (nonatomic) AuthServerManager *serverManager;
+
 
 @end
 
 
-@implementation AuthPresenter
-
-@synthesize authView = _authView;
-
-
-static NSUInteger failure_counter = 0;
-static const NSUInteger failureMaxCount = 5;
+@implementation AuthPresenter {
+    NSUInteger failureCounter;
+}
 
 
--(id) initWithServerManagerAndView:(id <RequirementForView>) authViewControl{
-    self = [super init];
-    if(self){
-        NSURL *url = [NSURL URLWithString:@"http://localhost:4567"];
+-(id) initWithView:(id <RequirementForView>) authViewControl{
+    
+    if(self = [super init]){
+        
+        NSURL *url = [NSURL URLWithString:@(urlString)];
         self.serverManager = [[AuthServerManager alloc] initWithUrl:url];
         
         self.authView = authViewControl;
+        
+        failureCounter = 0;
         
     }
     
@@ -42,12 +43,13 @@ static const NSUInteger failureMaxCount = 5;
 }
 
 -(void) getAuthInfoFromModel:(NSDictionary *)dictLoginPasssword{
+    if(!dictLoginPasssword)
+        return ;
     
     if([self setEnterDataInfoToView:dictLoginPasssword])
         return;
     
-    [self.serverManager
-     getAuthInfoFromServer:^(NSDictionary* dictFromServer){
+    [self.serverManager getAuthInfoFromServer:^(NSDictionary* dictFromServer){
          NSLog(@"getAuthInfoFromModel success %@", dictFromServer);
          
          
@@ -56,15 +58,15 @@ static const NSUInteger failureMaxCount = 5;
              return;
          }
          else{
-             if(failure_counter == failureMaxCount){
+             if(failureCounter == failureMaxCount){
                 [self.authView setConfirmActionBasedOnServerInfo:AuthInfoIncorrectTooManyTimes];
              }
-             else if (failure_counter >= 2){
-                 NSUInteger tmpNum = failureMaxCount - failure_counter;
+             else if (failureCounter >= 2){
+                 NSUInteger tmpNum = (NSUInteger)failureMaxCount - failureCounter;
                  [self.authView warningInfoText:tmpNum];
              }
              [self.authView setConfirmActionBasedOnServerInfo:AuthInfoNotMatch];
-             failure_counter++;
+             failureCounter++;
              return;
          }
          
@@ -80,12 +82,10 @@ static const NSUInteger failureMaxCount = 5;
              case -1011:
                  NSLog(@"%@", [error localizedDescription]);
                  [self.authView createAlertBasedOnServerError:ServerNotFound404 errorMessage:[error localizedDescription]];
-                 
                  break;
              case -1001:
                  NSLog(@"%@", [error localizedDescription]);
                  [self.authView createAlertBasedOnServerError:ServerConnectionTimeOut errorMessage:[error localizedDescription]];
-                 
                  break;
                  
              default:
@@ -98,6 +98,8 @@ static const NSUInteger failureMaxCount = 5;
 
 -(BOOL) setEnterDataInfoToView:(NSDictionary*) dictLoginPasssword{
     
+    if(!dictLoginPasssword)
+        return false;
     NSLog(@"%@",dictLoginPasssword);
     
     BOOL output = NO;
@@ -120,7 +122,6 @@ static const NSUInteger failureMaxCount = 5;
     
     
     if(numberOfMatchesInLogin != [loginField length] ){
-        //NSLog(@"numberOfMatchesInLogin = %ld", numberOfMatchesInLogin);
         [self.authView setConfirmActionBasedOnServerInfo:AuthInfoIncorrectLoginFormat];
         output = YES;
     }

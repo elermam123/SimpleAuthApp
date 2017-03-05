@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-fS-CSc">
-                                <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                <rect key="frame" x="16" y="76" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-DM-Zhv" userLabel="WarninngPasswordLabel">
-                                <rect key="frame" x="16" y="112" width="343" height="0.0"/>
+                                <rect key="frame" x="16" y="114" width="343" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="MuW-8y-wg1"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ahU-fS-CSc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="26J-ZY-Nmk"/>
-                            <constraint firstItem="ahU-fS-CSc" firstAttribute="top" secondItem="Nga-YG-j1q" secondAttribute="bottom" constant="8" id="6eV-dM-0t6"/>
+                            <constraint firstItem="ahU-fS-CSc" firstAttribute="top" secondItem="Nga-YG-j1q" secondAttribute="bottom" constant="10" id="6eV-dM-0t6"/>
                             <constraint firstAttribute="trailing" secondItem="gtx-lT-dVx" secondAttribute="trailing" constant="16" id="6wW-ZX-rkq"/>
                             <constraint firstItem="ahU-fS-CSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cyf-ka-his"/>
                             <constraint firstItem="1rh-DM-Zhv" firstAttribute="top" secondItem="ahU-fS-CSc" secondAttribute="bottom" constant="8" id="F1w-EM-IOC"/>

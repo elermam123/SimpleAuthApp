@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Sinatra">
+   </FileRef>
+   <FileRef
       location = "group:SimpleAuthenticationApp.xcodeproj">
    </FileRef>
    <FileRef
