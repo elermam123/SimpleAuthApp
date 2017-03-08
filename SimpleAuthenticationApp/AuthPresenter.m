@@ -7,16 +7,11 @@
 //
 
 #import "AuthPresenter.h"
-
-
 #import "AuthViewController.h"
 
 #define failureMaxCount 5
 
-
 @interface AuthPresenter()
-
-
 
 @end
 

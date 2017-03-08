@@ -30,7 +30,6 @@
         manager = [[AuthServerManager alloc] initWithUrl:url];
     });
     
-    
     return manager;
 }
 
@@ -60,8 +59,6 @@
                                   if(success){
                                       success(dictFromServ);
                                   }
-                                  
-                                  
                               } failure:^(NSURLSessionTask *operation, NSError *error) {
                                   NSLog(@"Error: %@", error);
                                   
@@ -71,8 +68,6 @@
                                   
                               }];
 
-    
-    
 }
 
 
