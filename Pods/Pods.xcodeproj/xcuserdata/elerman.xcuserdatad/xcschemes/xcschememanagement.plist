@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>OCMock.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SimpleAuthenticationApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07F7C1659E3BFA8CD4326DBE98DCCC0A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9F01D5618B5EC1182B5141A15468EDD1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A561198B7669F579C29FC6864AE4991F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3767D5065AB546620C572166154D755</key>
 		<dict>
 			<key>primary</key>
 			<true/>

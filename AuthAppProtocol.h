@@ -49,6 +49,7 @@ typedef enum ServerErrorFlags:NSUInteger{
 
 @optional
 -(void) warningInfoText:(NSUInteger) attempts;
+-(void) showCredentialError;
 
 
 @end

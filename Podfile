@@ -7,6 +7,7 @@ target 'SimpleAuthenticationApp' do
 
   # Pods for SimpleAuthenticationApp
   pod 'AFNetworking' , '~> 3.0'
+  pod 'OCMock' , '~> 3.4'
 
   target 'SimpleAuthenticationAppTests' do
     inherit! :search_paths

@@ -57,29 +57,20 @@
     
 }
 
+-(void) showCredentialError{
+    NSLog(@"showCredentialError");
+}
+
 -(void) setConfirmActionBasedOnServerInfo:(AuthenticationFlags) authFlags{
     switch (authFlags) {
         case AuthInfoMatch:{
             NSLog(@"AuthInfoMatch");
-            UIAlertController *alertControllerOk;
-            
-            alertControllerOk = [UIAlertController alertControllerWithTitle:authSuccess message:successLogin preferredStyle:UIAlertControllerStyleAlert];
-            
-            [alertControllerOk addAction:[UIAlertAction actionWithTitle:okay style:UIAlertActionStyleDefault handler:nil]];
-            UIWindow *windows = [[UIApplication sharedApplication].delegate window];
-            UIViewController *vc = windows.rootViewController;
-            [vc presentViewController:alertControllerOk animated:YES completion:nil];
+            [self initAlertControllerWithTitle:authSuccess andMessage:successLogin andActionStyle:UIAlertActionStyleDefault];
             break;
         }
         case AuthInfoNotMatch: {
             NSLog(@"AuthInfoNotMatch");
-            UIAlertController *alertControllerFail;
-            alertControllerFail = [UIAlertController alertControllerWithTitle:authFailed message:wrongLoginPassword preferredStyle:UIAlertControllerStyleAlert];
-            
-            [alertControllerFail addAction:[UIAlertAction actionWithTitle:okay style:UIAlertActionStyleDestructive handler:nil]];
-            UIWindow *windows = [[UIApplication sharedApplication].delegate window];
-            UIViewController *vc = windows.rootViewController;
-            [vc presentViewController:alertControllerFail animated:YES completion:nil];
+            [self initAlertControllerWithTitle:authFailed andMessage:wrongLoginPassword andActionStyle:UIAlertActionStyleDestructive];
             
             self.passwordField.text = @"";
             break;
@@ -104,19 +95,26 @@
             break;
         }
         case AuthInfoIncorrectTooManyTimes:{
-            UIAlertController *alertControllerMegaFail;
-            alertControllerMegaFail = [UIAlertController alertControllerWithTitle:authFailed message:messageAboutEnteringData preferredStyle:UIAlertControllerStyleAlert];
+            [self initAlertControllerWithTitle:authFailed andMessage:messageAboutEnteringData andActionStyle:UIAlertActionStyleDestructive];
             
-            [alertControllerMegaFail addAction:[UIAlertAction actionWithTitle:okay style:UIAlertActionStyleDestructive handler:nil]];
-            UIWindow *windows = [[UIApplication sharedApplication].delegate window];
-            UIViewController *vc = windows.rootViewController;
-            [vc presentViewController:alertControllerMegaFail animated:YES completion:nil];
             break;
         }
         default:
             break;
     }
     
+}
+
+-(void) initAlertControllerWithTitle:(NSString *) title andMessage:(NSString*) inputMessage andActionStyle:(UIAlertActionStyle) actionStyle{
+    UIAlertController *alertController;
+    alertController = [UIAlertController alertControllerWithTitle:title message:inputMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:okay style:actionStyle handler:nil]];
+    UIWindow *windows = [[UIApplication sharedApplication].delegate window];
+    UIViewController *vc = windows.rootViewController;
+    [vc presentViewController:alertController animated:YES completion:nil];
+    
+
 }
 
 -(void) warningInfoText:(NSUInteger) attempts{

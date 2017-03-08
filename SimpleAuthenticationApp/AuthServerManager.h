@@ -12,7 +12,7 @@
 @interface AuthServerManager : NSObject<RequirementForServerManager>
 
 
-
++ (AuthServerManager*) sharedManager;
 
 
 @end

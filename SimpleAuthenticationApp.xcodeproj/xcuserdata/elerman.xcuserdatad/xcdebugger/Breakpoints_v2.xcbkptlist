@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleAuthenticationApp/AuthServerManager.m"
-            timestampString = "510402791.003417"
+            timestampString = "510675561.000336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-getAuthInfoFromServer:onFailure:"
             landmarkType = "7">
          </BreakpointContent>

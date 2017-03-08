@@ -11,6 +11,7 @@
 #import "AuthViewController.h"
 #import "AuthAppProtocol.h"
 #import "AuthServerManager.h"
+#import "OCMock.h"
 
 @interface SimpleAuthenticationAppTests : XCTestCase
 
@@ -24,9 +25,10 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-    _presenter = [[AuthPresenter alloc] init];
+    
     _view = [[AuthViewController alloc] init];
+
+    _presenter = [[AuthPresenter alloc] initWithView:_view];
     
 }
 
@@ -36,7 +38,7 @@
 }
 
 -(void) testInitResultNotNil{
-    //id presenterTest = nil;
+    
     id presenterTest = [_presenter initWithView:nil];
     XCTAssertNotNil(presenterTest);
     
@@ -47,6 +49,10 @@
     
     void (^block)() = ^{
         [_presenter getAuthInfoFromModel:nil];
+         id mockClassView = OCMClassMock([AuthViewController class]);
+         OCMExpect([mockClassView showCredentialError]);
+         [mockClassView showCredentialError];
+         OCMVerifyAll(mockClassView);
     };
     XCTAssertNoThrow(block());
     
@@ -62,19 +68,19 @@
 
 -(void) testServerManagerMethodCall{
     
-    NSURL *url = [NSURL URLWithString:@"http://localhost:4567"];
-    _presenter.serverManager = [[AuthServerManager alloc] initWithUrl:url];
+    id servManager = [AuthServerManager sharedManager];
+    XCTAssertNotNil(servManager);
     
-    void (^serverBlock)() = ^{[_presenter.serverManager getAuthInfoFromServer:^(NSDictionary* dictFromServer){
+    void (^serverBlock)() = ^{[[AuthServerManager sharedManager] getAuthInfoFromServer:^(NSDictionary* dictFromServer){
         XCTAssertNotNil(dictFromServer);
         
     }
-                                                                    onFailure:^(NSError *error){
-                                                                    }];
+                                                                             onFailure:^(NSError *error){
+                                                                             }];
     };
     
     XCTAssertNoThrow(serverBlock());
-
+    
 }
 
 - (void)testPerformanceExample {

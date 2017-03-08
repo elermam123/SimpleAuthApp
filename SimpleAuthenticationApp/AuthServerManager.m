@@ -9,6 +9,8 @@
 #import "AuthServerManager.h"
 #import "AFNetworking.h"
 
+#define urlString "http://localhost:4567"
+
 @interface AuthServerManager ()
 
 @property (strong, nonatomic) AFHTTPSessionManager *requestOperationManager;
@@ -16,6 +18,21 @@
 @end
 
 @implementation AuthServerManager
+
+
++ (AuthServerManager*) sharedManager{
+    
+    static AuthServerManager* manager = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSURL *url = [NSURL URLWithString:@(urlString)];
+        manager = [[AuthServerManager alloc] initWithUrl:url];
+    });
+    
+    
+    return manager;
+}
 
 
 

@@ -12,7 +12,7 @@
 #import "AuthViewController.h"
 
 #define failureMaxCount 5
-#define urlString "http://localhost:4567"
+
 
 @interface AuthPresenter()
 
@@ -30,9 +30,6 @@
     
     if(self = [super init]){
         
-        NSURL *url = [NSURL URLWithString:@(urlString)];
-        self.serverManager = [[AuthServerManager alloc] initWithUrl:url];
-        
         self.authView = authViewControl;
         
         failureCounter = 0;
@@ -43,25 +40,28 @@
 }
 
 -(void) getAuthInfoFromModel:(NSDictionary *)dictLoginPasssword{
-    if(!dictLoginPasssword)
+    if(!dictLoginPasssword){
+        [self.authView showCredentialError];
         return ;
+    }
     
     if([self setEnterDataInfoToView:dictLoginPasssword])
         return;
     
-    [self.serverManager getAuthInfoFromServer:^(NSDictionary* dictFromServer){
+    [[AuthServerManager sharedManager] getAuthInfoFromServer:^(NSDictionary* dictFromServer){
          NSLog(@"getAuthInfoFromModel success %@", dictFromServer);
          
          
          if([dictFromServer isEqualToDictionary:dictLoginPasssword]){
              [self.authView setConfirmActionBasedOnServerInfo:AuthInfoMatch];
+             failureCounter = 0;
              return;
          }
          else{
              if(failureCounter == failureMaxCount){
                 [self.authView setConfirmActionBasedOnServerInfo:AuthInfoIncorrectTooManyTimes];
              }
-             else if (failureCounter >= 2){
+             else if (failureCounter >= 2 && failureCounter <= failureMaxCount){
                  NSUInteger tmpNum = (NSUInteger)failureMaxCount - failureCounter;
                  [self.authView warningInfoText:tmpNum];
              }
